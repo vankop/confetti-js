@@ -208,6 +208,17 @@ export default function ConfettiGenerator(params) {
         if(appstate.animate) requestAnimationFrame(draw);
       }
 
+      function inc(j) {
+        app.max += j
+        for(var i = 0; i < j; i++)
+          particles.push(particleFactory());
+      }
+
+      function dec(j) {
+        app.max -= j
+        particles.length = app.max
+      }
+
       function update() {
 
         for (var i = 0; i < appstate.max; i++) {
@@ -241,7 +252,9 @@ export default function ConfettiGenerator(params) {
   };
 
   return {
+    dec: dec,
+    inc: inc,
     render: _render,
-    clear: _clear
+    clear: _clear,
   }
 }
