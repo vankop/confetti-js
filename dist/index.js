@@ -243,8 +243,10 @@ function ConfettiGenerator(params) {
   };
 
   return {
+    dec: dec,
+    inc: inc,
     render: _render,
-    clear: _clear
+    clear: _clear,
   }
 }
 
