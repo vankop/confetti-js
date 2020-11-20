@@ -190,13 +190,13 @@ function ConfettiGenerator(params) {
   };
 
   function inc(j) {
-    app.max += j;
+    appstate.max += j;
     for(var i = 0; i < j; i++)
       particles.push(particleFactory());
   }
 
   function dec(j) {
-    app.max -= j;
+    appstate.max -= j;
     particles.length = app.max;
   }
 
