@@ -187,6 +187,17 @@ export default function ConfettiGenerator(params) {
     });
   }
 
+  function inc(j) {
+    app.max += j
+    for(var i = 0; i < j; i++)
+      particles.push(particleFactory());
+  }
+
+  function dec(j) {
+    app.max -= j
+    particles.length = app.max
+  }
+
   //////////////
   // Render confetti on canvas
   var _render = function() {
@@ -206,17 +217,6 @@ export default function ConfettiGenerator(params) {
         update();
 
         if(appstate.animate) requestAnimationFrame(draw);
-      }
-
-      function inc(j) {
-        app.max += j
-        for(var i = 0; i < j; i++)
-          particles.push(particleFactory());
-      }
-
-      function dec(j) {
-        app.max -= j
-        particles.length = app.max
       }
 
       function update() {
