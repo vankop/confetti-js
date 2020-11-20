@@ -195,7 +195,7 @@ function ConfettiGenerator(params) {
 
   function dec(j) {
     appstate.max -= j;
-    particles.length = app.max;
+    particles.length = appstate.max;
   }
 
   //////////////
